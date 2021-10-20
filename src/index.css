@@ -5,9 +5,160 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./assets/subtle-prism-blue.svg);
+  color: var(--bg);
+  height:700px
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+:root {
+  --bg:  #152D35;
+  --bg-accent: #345B63;
+  --text-color: #D4ECDD;
+  --nav-size: 60px;
+  --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 500ms; 
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  transform: scale(1.05);
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+input{
+  border-radius: 5px;
+  font-size: 20px;
+  max-width: 400px;
+  text-align: center;
+  background-color: var(--text-color);
+  border-color: var(--bg);
+}
+
+.form-group{
+  border-radius: 15px;
+}
+
+select{
+  max-width: 100px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: var(--text-color);
+  border-color: var(--bg);
+}
+
+form{
+  text-align: center;
+}
+
+.navbar{
+  height: var(--nav-size);
+  background-color: var(--bg);
+  padding: 0 1rem;
+  justify-content: flex-start;
+  border-bottom: var(--border);
+ }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button {
+  background-color: var(--bg-accent);
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-home-button {
+  background-color: var(--bg-accent);
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button {
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  align-content: space-around;
+  color: white;
+}
+
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--bg);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-link{
+  margin:10px
+}
+
+.currencychg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 63px;
+}
+
+.currencyrow{
+  align-items: center;
+}
+
+.equals{
+  font-size:40px
+}
+
+.title{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.about{
+  display: flex;
+  margin-top: 50px;
+}
+
+.contact{
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-around;
+}
+
+.social{
+  margin:5px
 }
