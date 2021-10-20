@@ -1,6 +1,7 @@
 import "../App.css";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+
 function Header() {
   return (
     <div className="navbar">

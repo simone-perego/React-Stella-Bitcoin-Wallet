@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./assets/subtle-prism-blue.svg);
+  background-image: var(--bg-image);
   color: var(--bg);
   height:700px
 }
@@ -21,9 +21,7 @@ code {
   --bg-accent: #345B63;
   --text-color: #D4ECDD;
   --nav-size: 60px;
-  --border: 1px solid #474a4d;
-  --border-radius: 8px;
-  --speed: 500ms; 
+  --bg-image: url(./assets/subtle-prism-blue.svg);
 }
 
 ul {
@@ -74,7 +72,6 @@ form{
   background-color: var(--bg);
   padding: 0 1rem;
   justify-content: flex-start;
-  border-bottom: var(--border);
  }
 
 .nav-item {
