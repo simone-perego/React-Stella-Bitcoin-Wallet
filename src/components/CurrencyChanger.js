@@ -15,6 +15,7 @@ function CurrencyChanger() {
   const [changedFromAmount, setChangedFromAmount] = useState(true);
   let fromamount;
   let toamount;
+  console.log(currencies);
 
   if (changedFromAmount) {
     fromamount = amount;
@@ -46,7 +47,7 @@ function CurrencyChanger() {
     fetch(BASE_URL)
       .then((res) => res.json())
       .then((data) => {
-        const first = Object.keys(data.rates)[0];
+        const first = Object.keys(data.rates)[149];
         setCurrencies([data.base, ...Object.keys(data.rates)]);
         setFromCurr(data.base);
         setToCurr(first);
