@@ -82,7 +82,9 @@ function CurrencyChanger() {
         </select>
       </div>
       <div className="currencychg">
-        <strong>il tasso di cambio è 1 : {exchangeRate}</strong>
+        <strong>
+          il tasso di cambio da {fromCurr} a {toCurr} è 1 : {exchangeRate}
+        </strong>
         <strong>
           al {date} alle ore {time}
         </strong>
