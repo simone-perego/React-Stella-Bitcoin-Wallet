@@ -84,10 +84,10 @@ function CurrencyChanger() {
       </div>
       <div className="currencychg">
         <strong>
-          il tasso di cambio da {fromCurr} a {toCurr} è 1 : {exchangeRate}
+          Exchange rate from {fromCurr} to {toCurr} is 1 : {exchangeRate}
         </strong>
         <strong>
-          al {date} alle ore {time}
+          updated on {date} at {time}
         </strong>
       </div>
     </div>

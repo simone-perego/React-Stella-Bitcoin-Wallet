@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="container">
       <div className="title">
-        <h1>CAMBIO VALUTA</h1>
+        <h1>CURRENCY EXCHANGE</h1>
       </div>
       <CurrencyChanger />
     </div>
