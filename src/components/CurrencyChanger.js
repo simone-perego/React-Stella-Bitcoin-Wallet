@@ -5,6 +5,8 @@ const API_KEY = "?access_key=ece68b4cde5b5bbddcb580a80011c1a1";
 const BASE_URL = "http://data.fixer.io/api/latest" + API_KEY;
 
 function CurrencyChanger() {
+  const date = new Date().toLocaleDateString();
+  const time = new Date().toLocaleTimeString();
   const [currencies, setCurrencies] = useState([]);
   const [fromCurr, setFromCurr] = useState([]);
   const [toCurr, setToCurr] = useState([]);
@@ -78,6 +80,12 @@ function CurrencyChanger() {
             <option key={option}>{option} </option>
           ))}
         </select>
+      </div>
+      <div className="currencychg">
+        <strong>il tasso di cambio è 1 : {exchangeRate}</strong>
+        <strong>
+          al {date} alle ore {time}
+        </strong>
       </div>
     </div>
   );
