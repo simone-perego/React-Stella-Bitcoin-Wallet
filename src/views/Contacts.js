@@ -1,7 +1,5 @@
 import "../App.css";
 
-let email, pass, Messaggio;
-
 function nameChanged(e) {
   console.log(e.target.value);
 }

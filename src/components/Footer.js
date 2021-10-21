@@ -12,16 +12,16 @@ function Footer() {
         Contact us
       </Link>
       <p>
-        <a className="social">
+        <a className="social" href="www.facebook.com">
           <FaFacebook />
         </a>
-        <a className="social">
+        <a className="social" href="www.youtube.com">
           <FaYoutube />
         </a>
-        <a className="social">
+        <a className="social" href="www.twitter.com">
           <FaTwitter />
         </a>
-        <a className="social">
+        <a className="social" href="www.instagram.com">
           <FaInstagram />
         </a>
       </p>
