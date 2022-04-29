@@ -29,16 +29,6 @@ function BitcoinChanger({cptname,index}) {
     toamount = ((amount+1) * buyRate); 
   }
 
-  function toggleSlide () {
-    const div = document.querySelector('div')
-    console.log("open toggle")
-    if (div.classList.contains('open')) {
-      div.classList.remove('open')
-    } else {
-      div.classList.add('open')
-    }
-  }
-
   useEffect(() => {
     fetch(BASE_URL)
       .then((res) => res.json())

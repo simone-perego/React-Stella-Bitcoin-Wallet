@@ -1,14 +1,24 @@
 import React, {useState} from "react";
 import "../App.css";
 
-function LoginForm({Login, error}){
+function LoginForm({Login}){
 
   const [details,setDetails] = useState({seed:""});
+  const [user, setUser] = useState();
+  let mySeed = localStorage.getItem("mySeed");
+  const [error, setError] = useState("");
 
   const submitHandler = e  => {
     e.preventDefault();
-
-    Login(details);
+    localStorage.setItem('seed',details.seed);
+    if (details.seed == mySeed) {
+      console.log("Logged in");
+      setUser({ user });
+    } else {
+      console.log("error");
+      setError("SEED ERRATO RIPROVARE");
+    }
+    Login();
   }
 
   return(

@@ -7,7 +7,7 @@ function Header({Logout}) {
 
   const logoutHandler = e  => {
     e.preventDefault();
-
+    localStorage.setItem('seed',"");
     Logout();
   }
 
