@@ -1,14 +1,18 @@
 import React from "react";
 import "../App.css";
-import CurrencyChanger from "../components/CurrencyChanger.js";
+import BitcoinChanger from "../components/BitcoinChanger";
+
+const myCrypto = ["BTC", "ETH", "BNB", "SOL"];
 
 function Home() {
-  return (
+  return (    
     <div className="container">
-      <div className="title">
-        <h1>CURRENCY EXCHANGE</h1>
-      </div>
-      <CurrencyChanger />
+
+    <div className="currencychg">
+      {myCrypto.map((cptname, index) => (
+      <BitcoinChanger cptname={cptname} index={index} />
+      ))}
+    </div>
     </div>
   );
 }

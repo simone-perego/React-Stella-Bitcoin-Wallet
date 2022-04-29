@@ -1,8 +1,16 @@
 import "../App.css";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import { FaTimesCircle } from "react-icons/fa";
 
-function Header() {
+function Header({Logout}) {
+
+  const logoutHandler = e  => {
+    e.preventDefault();
+
+    Logout();
+  }
+
   return (
     <div className="navbar">
       <Link className="icon-home-button" to="/">
@@ -13,6 +21,9 @@ function Header() {
       </Link>
       <Link className="icon-button" to="/contacts">
         Contact us
+      </Link>
+      <Link className="icon-logout-button" to="/" onClick={logoutHandler}>
+        <FaTimesCircle />
       </Link>
     </div>
   );

@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: var(--bg-image);
   color: var(--bg);
-  height:700px
+  min-height: 100vh;
 }
 
 code {
@@ -49,6 +49,24 @@ input{
   text-align: center;
   background-color: var(--text-color);
   border-color: var(--bg);
+  margin: 20px;
+}
+
+.toggle{
+  border-radius: 5px;
+  font-size: 20px;
+  max-width: 400px;
+  text-align: center;
+  background-color: var(--text-color);
+  border-color: var(--bg);
+  margin: 20px;
+}
+
+input:hover{
+  color: var(--bg);
+  transform: scale(1.05);
+  transition: 0.5s;
+  text-decoration: none;
 }
 
 .form-group{
@@ -70,8 +88,8 @@ form{
 .navbar{
   height: var(--nav-size);
   background-color: var(--bg);
-  padding: 0 1rem;
   justify-content: flex-start;
+  animation: slideDown 0.5s;
  }
 
 .nav-item {
@@ -94,10 +112,21 @@ form{
   background-color: var(--bg-accent);
   border-radius: 50%;
   padding: 10px;
-  margin-right: 20px;
+  margin: 0px 20px 0px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.icon-logout-button {
+  background-color: var(--bg-accent);
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: calc(100vw - 330px);
+  right: 0;
+  display: flex;
+  align-items: right;
+  justify-content: right;
 }
 
 .submit-button {
@@ -118,10 +147,26 @@ form{
   left: 0;
   width: 100%;
   text-align: center;
+  animation: slideUp 0.5s;
 }
 
 .footer-link{
   margin:10px
+}
+
+.Login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  animation: fadeIn 3s;
+}
+
+.currencyrow{
+  align-items: center;
+  justify-content: center;
 }
 
 .currencychg{
@@ -129,15 +174,13 @@ form{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 63px;
-}
-
-.currencyrow{
-  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  animation: slide 1s;
 }
 
 .equals{
-  font-size:40px
+  font-size:30px
 }
 
 .title{
@@ -159,4 +202,52 @@ form{
 
 .social{
   margin:5px
+}
+
+.buy{
+  display:block;
+  animation: slideDownBuy 0.5s;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideDownBuy {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1; 
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
