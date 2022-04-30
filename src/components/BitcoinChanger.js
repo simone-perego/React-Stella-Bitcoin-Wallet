@@ -80,8 +80,8 @@ function BitcoinChanger({cptname,index}) {
           {
           show?
           <div className="buy">
-            <input type="submit" value={"BUY 1 " + cptname} onClick={buy1}></input>
-            <input type="submit" value={"SELL 1 " + cptname} onClick={sell1}></input>
+            <input name="buy" type="submit" value={"BUY 1 " + cptname} onClick={buy1}></input>
+            <input name="sell" type="submit" value={"SELL 1 " + cptname} onClick={sell1}></input>
           </div>
           :null
           }

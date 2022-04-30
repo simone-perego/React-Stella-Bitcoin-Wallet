@@ -22,7 +22,7 @@ function Header({Logout}) {
       <Link className="icon-button" to="/contacts">
         Contact us
       </Link>
-      <Link className="icon-logout-button" to="/" onClick={logoutHandler}>
+      <Link className="icon-logout-button" name="Logout" to="/" onClick={logoutHandler}>
         <FaTimesCircle />
       </Link>
     </div>
