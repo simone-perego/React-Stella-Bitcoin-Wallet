@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header.js";
-import Footer from "./components/Footer.js";
-import About from "./views/About.js";
-import Home from "./views/Home.js";
-import Contacts from "./views/Contacts.js";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import About from "./views/About";
+import Home from "./views/Home";
+import Contacts from "./views/Contacts";
+import LoginPage from "./views/LoginPage";
 import "./App.css";
-import LoginForm from "./components/LoginForm.js";
 
 function App() {
   localStorage.setItem('mySeed', 123);
@@ -35,7 +35,7 @@ function App() {
           <Footer />
         </Router>
       ) : (
-        <LoginForm Login={Login} />
+        <LoginPage Login={Login} />
       )}
     </div>
   );

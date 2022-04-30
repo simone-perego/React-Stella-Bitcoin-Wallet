@@ -10,7 +10,7 @@ function Home() {
 
     <div className="currencychg">
       {myCrypto.map((cptname, index) => (
-      <BitcoinChanger cptname={cptname} index={index} />
+      <BitcoinChanger key={cptname} cptname={cptname} index={index} />
       ))}
     </div>
     </div>

@@ -28,7 +28,7 @@ function Contacts() {
           </div>
           <div className="form-group">
             <label>Messaggio</label>
-            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onBlur={message}></textarea>
+            <textarea className="form-control" id="exampleFormControlTextarea1" onBlur={message}></textarea>
           </div>
           <button type="submit" className="submit-button">
             Submit

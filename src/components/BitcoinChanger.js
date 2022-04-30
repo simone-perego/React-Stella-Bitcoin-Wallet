@@ -72,7 +72,7 @@ function BitcoinChanger({cptname,index}) {
           />
           <select value={toCurr} onChange={handletocurr}>
             {currencies.map((option) => (
-              <option key={option}>{option} </option>
+              <option key={option}>{option}</option>
             ))}
           </select>
           <button className="toggle" onClick={() => setShow(!show)}><FaArrowCircleDown /></button>

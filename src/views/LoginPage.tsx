@@ -1,24 +1,22 @@
 import React, {useState} from "react";
 import "../App.css";
 
-function LoginForm({Login}){
+function LoginPage({Login}){
 
   const [details,setDetails] = useState({seed:""});
-  const [user, setUser] = useState();
   let mySeed = localStorage.getItem("mySeed");
   const [error, setError] = useState("");
 
   const submitHandler = e  => {
     e.preventDefault();
-    localStorage.setItem('seed',details.seed);
     if (details.seed == mySeed) {
+      localStorage.setItem('seed',details.seed);
       console.log("Logged in");
-      setUser({ user });
+      Login();
     } else {
       console.log("error");
       setError("SEED ERRATO RIPROVARE");
     }
-    Login();
   }
 
   return(
@@ -36,4 +34,4 @@ function LoginForm({Login}){
   )
 }
 
-export default LoginForm;
+export default LoginPage;
