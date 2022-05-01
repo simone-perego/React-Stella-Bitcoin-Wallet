@@ -30,9 +30,7 @@ function Contacts() {
             <label>Messaggio</label>
             <textarea className="form-control" id="exampleFormControlTextarea1" onBlur={message}></textarea>
           </div>
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
+          <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>
     </div>
