@@ -9,14 +9,14 @@ import LoginPage from "./views/LoginPage";
 import "./App.css";
 
 function App() {
-  localStorage.setItem('mySeed', 123);
+  localStorage.setItem("mySeed", 123);
   let mySeed = localStorage.getItem("mySeed");
   let seed = localStorage.getItem("seed");
-  const [isLoggedIn,setIsLoggedIn] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState("");
 
   const Login = () => {
     setIsLoggedIn(true);
-  }
+  };
 
   const Logout = () => {
     setIsLoggedIn(false);
