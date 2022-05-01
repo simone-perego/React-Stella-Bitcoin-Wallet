@@ -3,6 +3,7 @@ import "../App.css";
 import BitcoinChanger from "../components/BitcoinChanger";
 
 const myCrypto = ["BTC", "ETH", "BNB", "SOL"];
+localStorage.setItem("myCrypto",JSON.stringify(myCrypto))
 
 function Home() {
   return (    

@@ -11,6 +11,12 @@ function Header({Logout}) {
     Logout();
   }
 
+  const reset = e => {
+    e.preventDefault();
+    localStorage.clear();
+    Logout();
+  }
+
   return (
     <div className="navbar">
       <Link className="icon-home-button" to="/">
@@ -21,6 +27,9 @@ function Header({Logout}) {
       </Link>
       <Link className="icon-button" to="/contacts">
         Contact us
+      </Link>
+      <Link className="icon-button-reset" onClick={reset}>
+        Reset wallet
       </Link>
       <Link className="icon-logout-button" name="Logout" to="/" onClick={logoutHandler}>
         <FaTimesCircle />

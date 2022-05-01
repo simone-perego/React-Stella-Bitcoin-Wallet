@@ -23,7 +23,7 @@ function LoginPage({Login}){
     <div className="Login">
     <form onSubmit={submitHandler}>    
       <div>
-        <input type="text" name="seed" id="seed" placeholder="Il tuo Seed" onChange={e => setDetails({...details, seed: e.target.value})} value={details.seed}/>
+        <input className="currency" type="text" name="seed" id="seed" placeholder="Il tuo Seed" onChange={e => setDetails({...details, seed: e.target.value})} value={details.seed}/>
       </div>
       <div>
         <input type="submit" value="LOGIN"></input>

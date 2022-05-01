@@ -6,27 +6,37 @@ const BASE_URL = "https://blockchain.info/ticker";
 
 function BitcoinChanger({cptname,index}) {
   const [currencies, setCurrencies] = useState([]);
-  const [amount, setAmount] = useState(2.5 + index);
-  const [exchangeRate, setExchangeRate] = useState();
+  const [amount, setAmount] = useState(localStorage.getItem("btcAmount"+index));
+  //const [amount, setAmount] = useState(2.5 + index);  //WITHOUT LOCALSTORAGE
+  const [exchangeRate, setExchangeRate] = useState("");
   const [buyRate, setBuyRate] = useState();
   const [sellRate, setSellRate] = useState();
   const [toCurr, setToCurr] = useState([]);
   const [show, setShow] = useState(false);
-  let fromamount = amount;
-  let toamount = fromamount * exchangeRate;
+  let btcAmount = parseFloat(amount)
+  let toAmount = btcAmount * exchangeRate;
+
+  if(amount === null){
+     btcAmount = 2.5 + index
+     localStorage.setItem(("btcAmount"+index), btcAmount)
+  }
 
   function handletocurr(e) {
     setToCurr(e.target.value);
   }
 
   function sell1(e) {
-    setAmount(amount-1);
-    toamount = ((amount-1) * sellRate); 
+    btcAmount = btcAmount - 1
+    setAmount(btcAmount);  
+    toAmount = (btcAmount* sellRate);
+    localStorage.setItem(("btcAmount"+index), btcAmount)
   }
 
   function buy1(e) {
-    setAmount(amount+1);
-    toamount = ((amount+1) * buyRate); 
+    btcAmount = btcAmount + 1
+    setAmount(btcAmount);
+    toAmount = (btcAmount * buyRate);
+    localStorage.setItem(("btcAmount"+index), btcAmount)
   }
 
   useEffect(() => {
@@ -47,28 +57,19 @@ function BitcoinChanger({cptname,index}) {
       fetch(BASE_URL)
         .then((res) => res.json())
         .then((data) => {
-            setExchangeRate(data[toCurr].buy);
+            setExchangeRate(data[toCurr].last);
             console.log(exchangeRate)});
         }
   }, [toCurr]);
 
   return (
-        <div className="currencyrow flex-column">
+        <div className="flex-column">
           <div className="currencyrow d-flex">
-          <h5>{cptname}:</h5>
-          <input
-            type="number"
-            value={fromamount}
-            readOnly
+          <h5 className="btcLabel">{cptname}:</h5>
+          <input className="currency" type="number" value={btcAmount} readOnly
           />
-          <h1 className="equals">
-            {" "}
-            <FaArrowsAltH />{" "}
-          </h1>
-          <input 
-            type="text"
-            value={toamount}
-            readOnly
+          <h1 className="equals"><FaArrowsAltH /></h1>
+          <input className="currency" type="text" value={toAmount} readOnly
           />
           <select value={toCurr} onChange={handletocurr}>
             {currencies.map((option) => (
@@ -80,8 +81,8 @@ function BitcoinChanger({cptname,index}) {
           {
           show?
           <div className="buy">
-            <input name="buy" type="submit" value={"BUY 1 " + cptname} onClick={buy1}></input>
-            <input name="sell" type="submit" value={"SELL 1 " + cptname} onClick={sell1}></input>
+            <input className="currency" name="buy" type="submit" value={"BUY 1 " + cptname} onClick={buy1}></input>
+            <input className="currency" name="sell" type="submit" value={"SELL 1 " + cptname} onClick={sell1}></input>
           </div>
           :null
           }
