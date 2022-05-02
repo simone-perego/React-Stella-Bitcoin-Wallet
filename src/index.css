@@ -58,6 +58,11 @@ input{
   background-color: var(--text-color);
   border-color: var(--bg);
   margin: 20px;
+  border-radius: 50%;
+}
+
+.toggleicon{
+  padding-bottom: 4px;
 }
 
 input:hover{
@@ -94,7 +99,7 @@ form{
   height: var(--nav-size);
   background-color: var(--bg);
   justify-content: flex-start;
-  animation: slideDown 0.5s;
+  animation: slideDown 1s;
  }
 
 .nav-item {
@@ -162,7 +167,7 @@ form{
   left: 0;
   width: 100%;
   text-align: center;
-  animation: slideUp 0.5s;
+  animation: slideUp 1s;
 }
 
 .footer-link{
@@ -179,7 +184,7 @@ form{
   animation: fadeIn 3s;
 }
 
-.currencyrow{
+.currencywrapper{
   align-items: center;
   justify-content: center;
   background-color: var(--bg-accent);
@@ -189,8 +194,14 @@ form{
   border-color: var(--bg);
 }
 
+.currencyrow{
+  align-items: center;
+  justify-content: center;
+}
+
 .currency{
   margin: 20px;
+  border-radius: 50px;
 }
 
 .currencychg{
@@ -226,16 +237,23 @@ form{
 
 .btcLabel{
   min-width: 60px;
-  color: white;
+  color: var(--text-color)
 }
 
 .social{
   margin:5px
 }
 
-.buy{
-  display:block;
-  animation: slideDownBuy 0.5s;
+.buy {
+  visibility: hidden;
+  transition: visibility .5s, max-height .5s;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.buy.open {
+  visibility: visible;
+  max-height: 100px;
 }
 
 @keyframes slideUp {
@@ -269,9 +287,11 @@ form{
 
 @keyframes slide {
   0% {
+    opacity: 0;
     transform: translateX(-100%);
   }
   100% {
+    opacity: 1;
     transform: translateX(0%);
   }
 }

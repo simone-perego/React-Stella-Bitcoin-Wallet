@@ -18,7 +18,7 @@ describe("Test", function () {
   });
 
   it("adds a BTC", function () {
-    cy.get(".toggle").click({ multiple: true });
+    cy.get(".toggle").click({ multiple: true, force:true });
 
     cy.get("input[name=buy]").click({ multiple: true, force: true });
 
