@@ -68,7 +68,6 @@ function BitcoinChanger({ cptname, index }) {
   function toggleSlide(e) {
     const div = document.querySelector("#buy" + index);
     console.log(div);
-    console.log("porcod");
     if (div.classList.contains("open")) {
       div.classList.remove("open");
     } else {

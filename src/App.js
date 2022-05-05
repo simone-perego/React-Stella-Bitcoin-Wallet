@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      {seed == mySeed ? (
+      {seed == mySeed || isLoggedIn ? (
         <Router>
           <Header Logout={Logout} />
           <Switch>
